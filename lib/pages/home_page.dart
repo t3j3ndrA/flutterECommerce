@@ -1,3 +1,4 @@
+import 'package:ecom/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 
@@ -10,7 +11,7 @@ class HomePage extends StatelessWidget {
       title: "E-Commerce Shop",
       initialRoute: "/login",
       routes: {
-        "/login": (context) => LoginPage(),
+        "/login": (context) => const LoginPage(),
       },
       home: Scaffold(
         appBar: AppBar(
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
           elevation: 0,
         ),
         body: Text("Home Screen"),
-        drawer: Drawer(),
+        drawer: MyDrawer(),
       ),
     );
   }
