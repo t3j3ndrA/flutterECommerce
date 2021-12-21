@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -9,13 +10,12 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.blue,
+        color: Colors.blueGrey[700],
         child: ListView(
           children: [
             // User profile container
             Container(
               // height: 200,
-              color: Colors.blue,
               padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -24,29 +24,40 @@ class MyDrawer extends StatelessWidget {
                   SizedBox(
                     height: 15,
                   ),
-                  CircleAvatar(
-                    backgroundImage: NetworkImage(imageURL),
-                    radius: 50,
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "Tejendra Dhanani",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    "tejendradhanani@gmail.com",
-                    style: TextStyle(color: Colors.white),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: NetworkImage(imageURL),
+                        radius: 40,
+                      ),
+                      SizedBox(
+                        width: 19,
+                      ),
+                      Expanded(
+                          child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Tejendra Dhanani",
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "tejendradhanani@gmail.com",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ))
+                    ],
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   ListTielTemplate("Home", Icons.home),
-                  ListTielTemplate("Login", Icons.login),
-                  ListTielTemplate(
-                      "Profile", Icons.align_horizontal_right_sharp),
+                  ListTielTemplate("Trace Your order", Icons.track_changes),
+                  ListTielTemplate("Cart", CupertinoIcons.cart_badge_plus),
+                  ListTielTemplate("Manage Account", Icons.account_box),
+                  ListTielTemplate("Settings", Icons.settings),
                 ],
               ),
             )
@@ -69,12 +80,17 @@ class ListTielTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(iconName, color: Colors.white, size: 30),
+      leading: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            iconName,
+            color: Colors.white,
+          )),
       title: Text(
         title,
         style: TextStyle(
           color: Colors.white,
-          fontSize: 22,
+          fontSize: 18,
         ),
       ),
     );

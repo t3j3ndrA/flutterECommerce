@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                 "Welcome $userName",
                 style: const TextStyle(
                   fontSize: 24,
-                  color: Colors.blue,
+                  color: Colors.indigo,
                 ),
               ),
               const SizedBox(
@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.indigo,
                     borderRadius: BorderRadius.circular(changeButton ? 50 : 8),
                   ),
                 ),
